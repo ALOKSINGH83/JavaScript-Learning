@@ -1,13 +1,74 @@
-div {
-    height: 400px;
-    width: 600px;
-    background-color: pink;
+body {
+    background-color: rgb(101, 202, 168);
+    font-family: "Roboto Mono", monospace;
 }
 
-ul {
-    background-color: blueviolet;
+.container {
+    height: 90vh;
+    width: 50%;
+    margin: auto;
+    margin-top: 35px;
+    text-align: center;
+    padding: 20px;
+    background-color: #508991;
+    border: 10px solid #172A3A;
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px #508991;
+}
+
+input {
+    height: 40px;
+    width: 75%;
+    color: black;
+    background-color: #99c1d2;
+    box-shadow: 2px 2px 5px #172A3A;
+    border: 2px solid #172A3A;
+    border-radius: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
+}
+
+.add {
+    height: 40px;
+    width: 60px;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 3px 3px 8px #172A3A;
+    font-size: 18px;
+    background-color: #09BC8A;
+}
+
+h1 {
+    color: black;
+    text-decoration: underline;
+    font-size: 50px;
 }
 
 li {
-    background-color: blue;
+    width: 90%;
+    text-align: start;
+    margin: 20px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 700;
+    color: black;
+    border: 2px dashed black;
+    border-radius: 20px;
+}
+
+.delete {
+    font-size: 18px;
+    color: black;
+    background-color: rgb(188, 107, 107);
+    border: 2px;
+    padding: 0px 8px 0px 8px;
+    border-radius: 15px;
+    border: 2px solid black;
 }

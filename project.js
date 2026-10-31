@@ -1,19 +1,23 @@
-let div = document.querySelector("div");
+let inp = document.querySelector("input");
 let ul = document.querySelector("ul");
-let lis = document.querySelectorAll("li");
+let add = document.querySelector(".add");
 
-div.addEventListener("click", function() {
-    console.log("div was clicked");
+add.addEventListener("click", function() {
+    let addTask = document.createElement("li");
+    addTask.innerText = inp.value;
+
+    let dltTask = document.createElement("button");
+    dltTask.classList.add("delete")
+    dltTask.innerText = "Delete";
+
+    addTask.appendChild(dltTask);
+    ul.appendChild(addTask);
+    inp.value = "";
 });
 
 ul.addEventListener("click", function(event) {
-    event.stopPropagation();
-    console.log("ul was clicked");
+    if(event.target.nodeName == "BUTTON") {
+        let tasks = event.target.parentElement;
+        tasks.remove();
+    };
 });
-
-for(li of lis) {
-    li.addEventListener("click", function(event) {
-        event.stopPropagation();
-    console.log("li was clicked");
-    });
-}
