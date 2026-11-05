@@ -1,17 +1,39 @@
-h1 = document.querySelector('h1');
+//Setting up promise
+// function savetoDb(data, success, failure) {
+//     let networkSpeed = Math.floor(Math.random() * 10) + 1;
+//     if(networkSpeed > 4) {
+//         success();
+//     } else {
+//         failure();
+//     }
+// };
 
-function changeColor(color, delay, nextChangeColor) {
-    setTimeout(() => {
-    h1.style.color = color;
-    if (nextChangeColor) nextChangeColor;
-}, delay);
+// savetoDb("apna college", () => {
+//     console.log("data saved successfully");
+//     savetoDb("another data", () => {
+//         console.log("data2 saved successfully");
+//         savetoDb("new data", () => {
+//             console.log("data3 saved successfully");
+//         }, () => {
+//             console.log("data3 not saved");
+//         })
+//     }, () => {
+//         console.log("data2 not saved");
+//     })
+// }, () => {
+//     console.log("data not saved");
+// });
+
+//Promise
+function savetoDb(data) {
+    return new Promise((resolve, reject) => {
+    let networkSpeed = Math.floor(Math.random() * 10) + 1;
+    if(networkSpeed > 4) {
+        resolve("data saved successfully");
+    } else {
+        reject("data not saved");
+    }
+    });
 };
 
-changeColor('red', 1000, () => {
-    changeColor('green', 1000, () => {
-        changeColor('blue', 1000, () => {
-            changeColor('orange', 1000, () => {
-            });
-        });
-    });
-});
+console.log(savetoDb("apna college"));
