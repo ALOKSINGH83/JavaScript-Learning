@@ -1,30 +1,27 @@
-function savetoDb(data) {
+h1 = document.querySelector('h1');
+
+function changeColor(color, delay) {
     return new Promise((resolve, reject) => {
-    let networkSpeed = Math.floor(Math.random() * 10) + 1;
-    if(networkSpeed > 4) {
-        resolve("success: data saved");
-    } else {
-        reject("error: data not saved");
-    }
+        setTimeout(() => {
+        h1.style.color = color;
+        resolve()
+    }, delay);
     });
 };
 
-savetoDb("apna college")
-    .then ((result) => {
-        console.log("data saved successfully");
-        console.log(result);
-        return savetoDb("apna college");
-    })
-    .then ((result) => {
-        console.log("data2 saved successfully");
-        console.log(result);
-        return savetoDb("apna college");
-    })
-    .then ((result) => {
-        console.log("data3 saved successfully");
-        console.log(result);
-    })
-    .catch((error) => {
-        console.log("data not saved due to network error");
-        console.log(error);
-    });
+changeColor('red', 1000)
+.then(() => {
+    console.log('color changed to red');
+    return changeColor('green', 1000);
+})
+.then(() => {
+    console.log('color changed to green');
+    return changeColor('blue', 1000);
+})
+.then(() => {
+    console.log('color changed to blue');
+    return changeColor('orange', 1000);
+})
+.then(() => {
+    console.log('color changed to orange');
+});
