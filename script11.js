@@ -1,14 +1,20 @@
-function one() {
-    return 1;
-};
+//Synchronous JavaScript
 
-function two() {
-    return one() + one();
-};
+// let a = 10;
+// console.log(a);
+// let b = 20;
+// console.log(b);
+// let sum = a + b;
+// console.log(sum);
 
-function three() {
-    let ans = two() + one();
-    console.log(ans);
-};
+//Asynchronous JavaScript
 
-three();
+setTimeout(() => {
+    console.log("I am a message from setTimeout"); //This will be printed after 2 seconds because of Browser not js.Browser holds the function and after 2 sec it pushes to call stack to execute it.
+}, 2000);
+
+setTimeout(() => {
+    console.log("Hello World!");
+}, 2000);
+
+console.log("Apna College");
