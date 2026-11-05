@@ -1,20 +1,17 @@
-//Synchronous JavaScript
+h1 = document.querySelector('h1');
 
-// let a = 10;
-// console.log(a);
-// let b = 20;
-// console.log(b);
-// let sum = a + b;
-// console.log(sum);
+function changeColor(color, delay, nextChangeColor) {
+    setTimeout(() => {
+    h1.style.color = color;
+    if (nextChangeColor) nextChangeColor;
+}, delay);
+};
 
-//Asynchronous JavaScript
-
-setTimeout(() => {
-    console.log("I am a message from setTimeout"); //This will be printed after 2 seconds because of Browser not js.Browser holds the function and after 2 sec it pushes to call stack to execute it.
-}, 2000);
-
-setTimeout(() => {
-    console.log("Hello World!");
-}, 2000);
-
-console.log("Apna College");
+changeColor('red', 1000, () => {
+    changeColor('green', 1000, () => {
+        changeColor('blue', 1000, () => {
+            changeColor('orange', 1000, () => {
+            });
+        });
+    });
+});
